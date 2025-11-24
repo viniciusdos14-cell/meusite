@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Landing Solução</title>
+    <meta name="description" content="Landing page simples e profissional criada localmente." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #0b1220;
+            --muted: #94a3b8;
+            --accent: #06b6d4;
+            --glass: rgba(255, 255, 255, 0.04);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color: #e6eef8;
+            background: linear-gradient(180deg, #071024 0%, #07182b 50%, #0b1220 100%);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 36px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #001
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 18px;
+            font-weight: 600
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 36px;
+            align-items: center;
+            margin-bottom: 48px
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 2.4rem;
+            line-height: 1.05
+        }
+
+        .hero p {
+            color: var(--muted);
+            margin-top: 12px
+        }
+
+        .cta {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px
+        }
+
+        .btn {
+            background: var(--accent);
+            color: #022;
+            padding: 12px 18px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer
+        }
+
+        .btn.secondary {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--muted)
+        }
+
+        .card {
+            background: var(--card);
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6)
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 40px
+        }
+
+        .feature h3 {
+            margin: 0 0 8px 0
+        }
+
+        .testimonials {
+            display: flex;
+            gap: 14px;
+            overflow: auto;
+            padding-bottom: 8px
+        }
+
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            padding-top: 22px;
+            margin-top: 36px;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        input,
+        textarea {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: inherit;
+            padding: 10px 12px;
+            border-radius: 8px
+        }
+
+        textarea {
+            min-height: 110px
+        }
+
+        @media (max-width:900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* Estilos para vídeo de fundo */
+        #bg-video {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            filter: brightness(0.55) contrast(1);
+        }
+
+        .bg-overlay {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(2, 6, 23, 0.35), rgba(2, 6, 23, 0.55));
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Vídeo de fundo: coloque um arquivo MP4 em assets/bg.mp4 ou use uma URL externa -->
+    <video id="bg-video" autoplay muted loop playsinline poster="assets/bg-poster.jpg" aria-hidden="true">
+        <source src="assets/bg.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo de fundo.
+    </video>
+    <div class="bg-overlay" aria-hidden="true"></div>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="logo">LS</div>
+                <div>
+                    <div style="font-weight:700">Land Page Do futuro</div>
+                    <div style="font-size:12px;color:var(--muted)">Soluções digitais simples</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#features">Recursos</a>
+                <a href="#pricing">Preços</a>
+                <a href="#contact">Contato</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div>
+                    <h1>Crie presença online profissional em minutos</h1>
+                    <p>Landing page moderna, rápida e responsiva para apresentar seu produto, captar leads e vender
+                        mais.</p>
+                    <div class="cta">
+                        <button class="btn"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Comece
+                            grátis</button>
+                        <button class="btn secondary"
+                            onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Ver
+                            planos</button>
+                    </div>
+
+                    <div style="margin-top:22px;display:flex;gap:12px;align-items:center">
+                        <div style="background:rgba(255,255,255,0.03);padding:10px;border-radius:8px">⭐ 4.9 (452)</div>
+                        <div style="color:var(--muted);font-size:14px">Mais de 1.500 sites lançados</div>
+                    </div>
+                </div>
+
+                <aside class="card">
+                    <h3>Teste grátis</h3>
+                    <p style="color:var(--muted);margin:8px 0 12px 0">Sem cartão. Lance sua landing page em poucos
+                        minutos.</p>
+                    <form id="leadForm" onsubmit="return submitLead(event)">
+                        <input type="text" id="name" placeholder="Seu nome" required />
+                        <input type="email" id="email" placeholder="Seu email" required />
+                        <button class="btn" type="submit">Quero começar</button>
+                    </form>
+                </aside>
+            </section>
+
+            <section id="features">
+                <h2 style="margin-bottom:12px">Recursos</h2>
+                <div class="features">
+                    <div class="card feature">
+                        <h3>Design Profissional</h3>
+                        <p style="color:var(--muted)">Modelos prontos e personalizáveis para qualquer segmento.</p>
+                    </div>
+                    <div class="card feature">
+                        <h3>Otimização SEO</h3>
+                        <p style="color:var(--muted)">Estrutura pensada para ranqueamento e velocidade.</p>
+                    </div>
+                    <div class="card feature">
+                        <h3>Formulários e Analytics</h3>
+                        <p style="color:var(--muted)">Capture leads e conecte com suas ferramentas favoritas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pricing" style="margin-bottom:28px">
+                <h2>Planos</h2>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px">
+                    <div class="card">
+                        <strong>Grátis</strong>
+                        <div style="color:var(--muted);margin:8px 0">1 landing • SSL • 500 visitas/mês</div>
+                        <div style="margin-top:12px"><button class="btn">Iniciar</button></div>
+                    </div>
+                    <div class="card">
+                        <strong>Pro</strong>
+                        <div style="color:var(--muted);margin:8px 0">Landing ilimitadas • Integrações • Analytics</div>
+                        <div style="margin-top:12px"><button class="btn">Assinar</button></div>
+                    </div>
+                    <div class="card">
+                        <strong>Empresa</strong>
+                        <div style="color:var(--muted);margin:8px 0">Soluções sob medida e suporte dedicado</div>
+                        <div style="margin-top:12px"><button class="btn">Fale conosco</button></div>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-bottom:28px">
+                <h2>Depoimentos</h2>
+                <div class="testimonials">
+                    <div class="card" style="min-width:260px">"Rápido e fácil — vendemos no primeiro mês."<div
+                            style="color:var(--muted);margin-top:8px">— Ana, e-commerce</div>
+                    </div>
+                    <div class="card" style="min-width:260px">"Ótimo suporte e templates lindos."<div
+                            style="color:var(--muted);margin-top:8px">— Carlos, agência</div>
+                    </div>
+                    <div class="card" style="min-width:260px">"Integrações práticas com CRM."<div
+                            style="color:var(--muted);margin-top:8px">— Beatriz, SaaS</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contato</h2>
+                <div style="display:grid;grid-template-columns:1fr 380px;gap:20px;margin-top:12px">
+                    <div class="card">
+                        <form id="contactForm" onsubmit="return submitContact(event)">
+                            <input type="text" id="fullname" placeholder="Nome completo" required />
+                            <input type="email" id="contactEmail" placeholder="Email" required />
+                            <textarea id="message" placeholder="Como podemos ajudar?" required></textarea>
+                            <div style="display:flex;justify-content:flex-end">
+                                <button class="btn" type="submit">Enviar mensagem</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h3>Fale conosco</h3>
+                        <p style="color:var(--muted);margin-top:8px">Email: contato@meusite.exemplo</p>
+                        <p style="color:var(--muted);margin-top:4px">Telefone: +55 11 99999-9999</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div>© <strong>MV Recursos Tecnológicos</strong> — Todos os direitos</div>
+            <div style="display:flex;gap:12px"><a href="#"
+                    style="color:var(--muted);text-decoration:none">Privacidade</a><a href="#"
+                    style="color:var(--muted);text-decoration:none">Termos</a></div>
+        </footer>
+    </div>
+
+    <script>
+        function submitLead(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            alert('Obrigado, ' + name + '! Em breve enviaremos um email para ' + email + '.');
+            document.getElementById('leadForm').reset();
+            return false;
+        }
+        function submitContact(e) {
+            e.preventDefault();
+            const name = document.getElementById('fullname').value;
+            alert('Mensagem enviada. Obrigado, ' + name + '!');
+            document.getElementById('contactForm').reset();
+            return false;
+        }
+    </script>
+</body>
+
+</html>
