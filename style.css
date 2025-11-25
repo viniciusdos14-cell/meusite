@@ -1,0 +1,291 @@
+:root {
+    --bg: #0f172a;
+    /* Cor de fundo principal */
+    --card: #0b1220;
+    /* Cor de fundo para cards */
+    --muted: #94a3b8;
+    /* Cor de texto secundária/silenciada */
+    --accent: #06b6d4;
+    /* Cor de destaque */
+    --glass: rgba(255, 255, 255, 0.04);
+    /* Efeito de vidro para inputs */
+}
+
+* {
+    box-sizing: border-box;
+    /* Garante que padding e borda não afetem a largura final dos elementos */
+}
+
+html,
+body {
+    height: 100%;
+    /* Faz com que o corpo da página ocupe toda a altura da tela */
+}
+
+body {
+    margin: 0;
+    /* Remove a margem padrão do body */
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    /* Define a família de fontes */
+    color: #e6eef8;
+    /* Cor do texto principal */
+    background: linear-gradient(180deg, #071024 0%, #07182b 50%, #0b1220 100%);
+    /* Fundo com gradiente */
+    -webkit-font-smoothing: antialiased;
+    /* Melhora a renderização da fonte em navegadores WebKit */
+    -moz-osx-font-smoothing: grayscale;
+    /* Melhora a renderização da fonte no Firefox */
+    line-height: 1.5;
+    /* Define a altura da linha para melhor legibilidade */
+}
+
+.container {
+    max-width: 1100px;
+    /* Largura máxima do conteúdo */
+    margin: 0 auto;
+    /* Centraliza o container na página */
+    padding: 40px 20px;
+    /* Espaçamento interno */
+}
+
+header {
+    display: flex;
+    /* Habilita o layout flexbox */
+    align-items: center;
+    /* Alinha os itens verticalmente ao centro */
+    justify-content: space-between;
+    /* Distribui os itens com espaço entre eles */
+    margin-bottom: 36px;
+    /* Margem inferior */
+}
+
+.brand {
+    display: flex;
+    /* Habilita o layout flexbox */
+    align-items: center;
+    /* Alinha os itens verticalmente ao centro */
+    gap: 12px;
+    /* Espaçamento entre os itens da marca */
+}
+
+.logo {
+    width: 44px;
+    /* Largura do logo */
+    height: 44px;
+    /* Altura do logo */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    background: linear-gradient(135deg, var(--accent), #7c3aed);
+    /* Fundo com gradiente */
+    display: flex;
+    /* Habilita o layout flexbox */
+    align-items: center;
+    /* Alinha o texto verticalmente ao centro */
+    justify-content: center;
+    /* Alinha o texto horizontalmente ao centro */
+    font-weight: 700;
+    /* Peso da fonte (negrito) */
+    color: #001;
+    /* Cor do texto do logo */
+}
+
+nav a {
+    color: var(--muted);
+    /* Cor dos links de navegação */
+    text-decoration: none;
+    /* Remove o sublinhado */
+    margin-left: 18px;
+    /* Margem à esquerda para espaçar os links */
+    font-weight: 600;
+    /* Peso da fonte */
+}
+
+.hero {
+    display: grid;
+    /* Habilita o layout de grid */
+    grid-template-columns: 1fr 420px;
+    /* Define duas colunas, uma flexível e outra fixa */
+    gap: 36px;
+    /* Espaçamento entre as colunas */
+    align-items: center;
+    /* Alinha os itens verticalmente ao centro */
+    margin-bottom: 48px;
+    /* Margem inferior */
+}
+
+.hero h1 {
+    margin: 0;
+    /* Remove margem do título */
+    font-size: 2.4rem;
+    /* Tamanho da fonte do título */
+    line-height: 1.05;
+    /* Altura da linha do título */
+}
+
+.hero p {
+    color: var(--muted);
+    /* Cor do parágrafo */
+    margin-top: 12px;
+    /* Margem superior */
+}
+
+.cta {
+    margin-top: 20px;
+    /* Margem superior para a seção de chamada para ação */
+    display: flex;
+    /* Habilita o layout flexbox */
+    gap: 12px;
+    /* Espaçamento entre os botões */
+}
+
+.btn {
+    background: var(--accent);
+    /* Cor de fundo do botão */
+    color: #022;
+    /* Cor do texto do botão */
+    padding: 12px 18px;
+    /* Espaçamento interno */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    border: none;
+    /* Remove a borda */
+    font-weight: 700;
+    /* Peso da fonte (negrito) */
+    cursor: pointer;
+    /* Muda o cursor para indicar que é clicável */
+}
+
+.btn.secondary {
+    background: transparent;
+    /* Fundo transparente para o botão secundário */
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    /* Borda sutil */
+    color: var(--muted);
+    /* Cor do texto */
+}
+
+.card {
+    background: var(--card);
+    /* Cor de fundo do card */
+    padding: 18px;
+    /* Espaçamento interno */
+    border-radius: 12px;
+    /* Bordas arredondadas */
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+    /* Sombra para dar profundidade */
+}
+
+.features {
+    display: grid;
+    /* Habilita o layout de grid */
+    grid-template-columns: repeat(3, 1fr);
+    /* Cria 3 colunas de largura igual */
+    gap: 18px;
+    /* Espaçamento entre os cards */
+    margin-bottom: 40px;
+    /* Margem inferior */
+}
+
+.feature h3 {
+    margin: 0 0 8px 0;
+    /* Margem para o título dentro do card de feature */
+}
+
+.testimonials {
+    display: flex;
+    /* Habilita o layout flexbox */
+    gap: 14px;
+    /* Espaçamento entre os depoimentos */
+    overflow: auto;
+    /* Adiciona barra de rolagem se os itens ultrapassarem a largura */
+    padding-bottom: 8px;
+    /* Espaçamento inferior para a barra de rolagem não cortar o conteúdo */
+}
+
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    /* Linha divisória no topo do rodapé */
+    padding-top: 22px;
+    /* Espaçamento interno superior */
+    margin-top: 36px;
+    /* Margem superior */
+    color: var(--muted);
+    /* Cor do texto */
+    display: flex;
+    /* Habilita o layout flexbox */
+    justify-content: space-between;
+    /* Distribui os itens com espaço entre eles */
+    align-items: center;
+    /* Alinha os itens verticalmente ao centro */
+}
+
+form {
+    display: flex;
+    /* Habilita o layout flexbox */
+    flex-direction: column;
+    /* Organiza os itens em coluna */
+    gap: 10px;
+    /* Espaçamento entre os campos do formulário */
+}
+
+input,
+textarea {
+    background: var(--glass);
+    /* Fundo com efeito de vidro */
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    /* Borda sutil */
+    color: inherit;
+    /* Herda a cor do texto do elemento pai */
+    padding: 10px 12px;
+    /* Espaçamento interno */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+}
+
+textarea {
+    min-height: 110px;
+    /* Altura mínima para a área de texto */
+}
+
+@media (max-width:900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        /* Muda para uma única coluna em telas menores */
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        /* Muda para uma única coluna em telas menores */
+    }
+}
+
+/* Estilos para vídeo de fundo */
+#bg-video {
+    position: fixed;
+    /* Posição fixa para cobrir toda a tela */
+    inset: 0;
+    /* Atalho para top: 0; right: 0; bottom: 0; left: 0; */
+    width: 100%;
+    /* Largura total */
+    height: 100%;
+    /* Altura total */
+    object-fit: cover;
+    /* Garante que o vídeo cubra todo o espaço, cortando se necessário */
+    z-index: -2;
+    /* Coloca o vídeo atrás de todo o conteúdo */
+    filter: brightness(0.55) contrast(1);
+    /* Ajusta o brilho e contraste do vídeo */
+}
+
+.bg-overlay {
+    position: fixed;
+    /* Posição fixa */
+    inset: 0;
+    /* Cobre toda a tela */
+    background: linear-gradient(180deg, rgba(2, 6, 23, 0.35), rgba(2, 6, 23, 0.55));
+    /* Sobreposição de gradiente para escurecer o vídeo */
+    z-index: -1;
+    /* Coloca a sobreposição acima do vídeo, mas abaixo do conteúdo */
+    pointer-events: none;
+    /* Impede que a sobreposição intercepte cliques do mouse */
+}
